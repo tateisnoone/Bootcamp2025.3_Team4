@@ -1,0 +1,30 @@
+
+target/
+build/
+
+allure-results
+.idea
+node_modules
+build
+test-results
+
+.idea/
+*.iml
+out/
+
+.DS_Store
+# --- Playwright ---
+playwright-report/
+test-results/
+blob-report/
+
+# Playwright caches / installed browsers (usually not committed)
+**/node_modules/
+**/.cache/
+**/.playwright/
+
+# If you ever download/store browsers in repo (rare)
+playwright/.local-browsers/
+
+# Optional: if you create ad-hoc screenshots folder
+screenshots/
