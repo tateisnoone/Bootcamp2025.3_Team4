@@ -9,7 +9,7 @@ public class Constants {
     public static final String REQUEST = "Request";
     public static final String RESPONSE = "Response";
     public static final String CARDS_TXT = "ბარათები";
-    //DB
+    public static final String QR_CODE_DATA = "https://app.tbcbank.ge/YiId/vdigxphg";
     //DB
     public static final String DB_DRIVER = "org.h2.Driver";
     public static final String DEVELOPMENT = "development";
