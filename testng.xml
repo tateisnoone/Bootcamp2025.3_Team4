@@ -13,7 +13,8 @@
         <parameter name="browserType" value="chrome"/>
         <parameter name="view" value="mobile"/>
         <classes>
-<!--            <class name=""/>-->
+    <!--            <class name=""/>-->
+
         </classes>
     </test>
 
