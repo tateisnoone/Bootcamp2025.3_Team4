@@ -18,8 +18,7 @@ public class BaseTest {
 
     @BeforeClass(alwaysRun = true)
     @Parameters({"browserType"})
-    public void setup(@Optional("chromium") String browserType,
-                      @Optional("desktop") String view) {
+    public void setup(@Optional("chromium") String browserType) {
         playwright = Playwright.create();
         BrowserType.LaunchOptions launchOptions = new BrowserType.LaunchOptions()
                 .setHeadless(false);
@@ -40,6 +39,7 @@ public class BaseTest {
         page.navigate(BASE_URL);
         commonSteps = new CommonSteps(page);
         CookieUtils.acceptIfVisible(page);
+        commonSteps.openForMe().goToCards();
     }
 
     @AfterClass

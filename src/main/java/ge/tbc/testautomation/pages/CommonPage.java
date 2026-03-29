@@ -19,7 +19,7 @@ public class CommonPage {
         this.tbcLogo = header.locator("tbcx-pw-logo");
         this.desktopNav = header.locator("tbcx-pw-navigation.show-desktop-only");
         this.forMeBtn = desktopNav.getByText(FOR_ME_TXT, new Locator.GetByTextOptions().setExact(true));
-        this.cardsBtn = page.locator("a[href='/ka/cards'");
+        this.cardsBtn = page.locator("a[href='/ka/cards']");
         this.cookieBanner = page.locator(".tbcx-pw-cookie-consent");
         this.cookieAcceptBtn = cookieBanner.locator(".tbcx-pw-cookie-consent__actions button").first();
        }
