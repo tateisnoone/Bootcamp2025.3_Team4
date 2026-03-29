@@ -8,11 +8,31 @@
         <listener class-name="ge.tbc.testautomation.utils.CustomTestListener"/>
     </listeners>
 
+    <!-- CHROME - MOBILE -->
+    <test name="Chrome Mobile">
+        <parameter name="browserType" value="chrome"/>
+        <parameter name="view" value="mobile"/>
+        <classes>
+<!--            <class name=""/>-->
+        </classes>
+    </test>
+
+    <!--     CHROME - DESKTOP -->
+    <test name="Chrome Desktop">
+        <parameter name="browserType" value="chrome"/>
+        <parameter name="view" value="desktop"/>
+        <classes>
+<!--            <class name=""/>-->
+        </classes>
+    </test>
+
+
     <!-- WEBKIT - DESKTOP -->
     <test name="Webkit Desktop">
         <parameter name="browserType" value="webkit"/>
         <parameter name="view" value="desktop"/>
         <classes>
+<!--            <class name=""/>-->
         </classes>
     </test>
 
@@ -25,20 +45,6 @@
     </test>
 
 
-    <!-- CHROME - MOBILE -->
-    <test name="Chrome Mobile">
-        <parameter name="browserType" value="chrome"/>
-        <parameter name="view" value="mobile"/>
-        <classes>
-        </classes>
-    </test>
 
-    <!--     CHROME - DESKTOP -->
-    <test name="Chrome Desktop">
-        <parameter name="browserType" value="chrome"/>
-        <parameter name="view" value="desktop"/>
-        <classes>
-        </classes>
-    </test>
 
 </suite>
