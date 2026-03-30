@@ -35,8 +35,19 @@ public class BaseTest {
         this.view = view;
         boolean isCi = "true".equalsIgnoreCase(System.getenv("CI"));
         playwright = Playwright.create();
-        BrowserType.LaunchOptions launchOptions = new BrowserType.LaunchOptions()
-                .setHeadless(isCi);
+        BrowserType.LaunchOptions launchOptions = new BrowserType.LaunchOptions();
+        if (isCi) {
+            launchOptions
+                    .setHeadless(true)
+                    .setArgs(java.util.List.of(
+                            "--headless=new",
+                            "--no-sandbox",
+                            "--disable-dev-shm-usage"
+                    ));
+        } else {
+            launchOptions.setHeadless(false);
+        }
+
         browser = switch (browserType.toLowerCase()) {
             case "webkit" -> playwright.webkit().launch(launchOptions);
             case "edge", "msedge" -> playwright.chromium().launch(

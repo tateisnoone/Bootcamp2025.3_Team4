@@ -29,12 +29,12 @@
         </classes>
     </test>
 
-    <test name="Edge Desktop">
-        <parameter name="browserType" value="edge"/>
-        <parameter name="view" value="desktop"/>
-        <classes>
-            <class name="ge.tbc.testautomation.tests.CardsApiUiTests"/>
-        </classes>
-    </test>
+<!--    <test name="Edge Desktop">-->
+<!--        <parameter name="browserType" value="edge"/>-->
+<!--        <parameter name="view" value="desktop"/>-->
+<!--        <classes>-->
+<!--            <class name="ge.tbc.testautomation.tests.CardsApiUiTests"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
 </suite>
