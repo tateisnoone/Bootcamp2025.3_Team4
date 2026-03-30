@@ -5,13 +5,17 @@ import ge.tbc.testautomation.steps.*;
 import ge.tbc.testautomation.steps.apisteps.ApiSteps;
 import ge.tbc.testautomation.utils.CookieUtils;
 import ge.tbc.testautomation.utils.NavigationFlows;
+import ge.tbc.testautomation.utils.PageManager;
 import org.testng.annotations.*;
 
 import static ge.tbc.testautomation.Constants.BASE_URL;
 import static ge.tbc.testautomation.Constants.MOBILE;
 
 
-@Listeners({io.qameta.allure.testng.AllureTestNg.class})
+@Listeners({
+        io.qameta.allure.testng.AllureTestNg.class,
+        ge.tbc.testautomation.utils.CustomTestListener.class
+})
 public class BaseTest {
     Playwright playwright;
     Browser browser;
@@ -29,9 +33,10 @@ public class BaseTest {
     public void setup(@Optional("chromium") String browserType,
                       @Optional("desktop") String view) {
         this.view = view;
+        boolean isCi = "true".equalsIgnoreCase(System.getenv("CI"));
         playwright = Playwright.create();
         BrowserType.LaunchOptions launchOptions = new BrowserType.LaunchOptions()
-                .setHeadless(false);
+                .setHeadless(isCi);
         browser = switch (browserType.toLowerCase()) {
             case "webkit" -> playwright.webkit().launch(launchOptions);
             case "edge", "msedge" -> playwright.chromium().launch(
@@ -46,6 +51,7 @@ public class BaseTest {
         context.setDefaultTimeout(10_000);
         context.setDefaultNavigationTimeout(30_000);
         page = context.newPage();
+        PageManager.setPage(page);
         page.navigate(BASE_URL);
 
         commonSteps = new CommonSteps(page);
@@ -78,9 +84,10 @@ public class BaseTest {
 
     @AfterClass
     public void tearDown() {
-        context.close();
-        page.close();
-        browser.close();
-        playwright.close();
+        if (page != null) page.close();
+        if (context != null) context.close();
+        if (browser != null) browser.close();
+        if (playwright != null) playwright.close();
+        PageManager.clear();
     }
 }
