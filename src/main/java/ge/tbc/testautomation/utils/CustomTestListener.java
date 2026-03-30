@@ -1,5 +1,6 @@
 package ge.tbc.testautomation.utils;
 
+import com.microsoft.playwright.Page;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.IConfigurationListener;
@@ -14,6 +15,9 @@ public class CustomTestListener implements ITestListener, IConfigurationListener
     @Override
     public void onTestFailure(ITestResult result) {
         logger.error("TEST FAILED: {} at {}", result.getName(), LocalDateTime.now(), result.getThrowable());
+
+        Page page = PageManager.getPage();
+        AllureAttachments.attachPageState(page, result.getThrowable());
     }
 
     @Override
@@ -25,5 +29,8 @@ public class CustomTestListener implements ITestListener, IConfigurationListener
                 LocalDateTime.now(),
                 result.getThrowable()
         );
+
+        Page page = PageManager.getPage();
+        AllureAttachments.attachPageState(page, result.getThrowable());
     }
 }

@@ -1,12 +1,12 @@
 package ge.tbc.testautomation.api;
 
+import ge.tbc.testautomation.config.AllureConfig;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
 
 import static ge.tbc.testautomation.Constants.BASE_URI;
-import static ge.tbc.testautomation.config.AllureConfig.ALLURE_FILTER;
 
 public class BaseApiCards {
 
@@ -14,7 +14,7 @@ public class BaseApiCards {
             new RequestSpecBuilder()
                     .setBaseUri(BASE_URI)
                     .setContentType(ContentType.JSON)
-                    .addFilter(ALLURE_FILTER)
+                    .addFilter(AllureConfig.ALLURE_FILTER)
                     .log(LogDetail.ALL)
                     .build();
 }
