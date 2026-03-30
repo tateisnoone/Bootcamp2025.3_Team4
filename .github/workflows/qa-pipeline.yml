@@ -114,7 +114,7 @@ jobs:
     name: Deploy Allure Report to GitHub Pages
     runs-on: ubuntu-latest
     needs: generate-allure-report
-    if: always() && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/pipeline-and-reporting')
+    if: always() && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/pipeline-and-reporting')
 
     environment:
       name: github-pages
