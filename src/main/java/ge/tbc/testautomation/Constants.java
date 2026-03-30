@@ -10,9 +10,6 @@ public class Constants {
     public static final String RESPONSE = "Response";
     public static final String CARDS_TXT = "ბარათები";
 
-
-
-
     // api
     public static final String COMPONENTS_NULL_ERROR = "Section components should not be null";
     public static final String SECTION_COMPONENTS_NOT_NULL = "Section components should not be null";
@@ -44,4 +41,11 @@ public class Constants {
     public static final String PUPILS_CARD = "მოსწავლის ბარათი";
     public static final String OLD_CARDS = "ძველი ბარათები";
     public static final String CARD_SAFETY_SERVICES = "ბარათის უსაფრთხოების სერვისი";
+    public static final String QR_CODE_DATA = "https://app.tbcbank.ge/YiId/vdigxphg";
+    //DB
+    public static final String DB_DRIVER = "org.h2.Driver";
+    public static final String DEVELOPMENT = "development";
+    public static final String DB_URL =
+            "jdbc:h2:tcp://localhost:9093/./companyDB;MODE=MSSQLServer;DATABASE_TO_UPPER=FALSE;CASE_INSENSITIVE_IDENTIFIERS=TRUE";
+    public static final String DB_USER = "sa";
  }

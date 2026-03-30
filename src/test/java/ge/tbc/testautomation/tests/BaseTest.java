@@ -1,6 +1,7 @@
 package ge.tbc.testautomation.tests;
 
 import com.microsoft.playwright.*;
+import ge.tbc.testautomation.pages.TbcCardPage;
 import ge.tbc.testautomation.steps.*;
 import ge.tbc.testautomation.utils.CookieUtils;
 import ge.tbc.testautomation.utils.NavigationFlows;
@@ -16,9 +17,12 @@ public class BaseTest {
     Browser browser;
     BrowserContext context;
     protected Page page;
-    CommonSteps commonSteps;
     String view;
 
+    //STEPS
+    CommonSteps commonSteps;
+    CardsSteps cardsSteps;
+    TbcCardSteps tbcCardSteps;
 
     @BeforeClass(alwaysRun = true)
     @Parameters({"browserType", "view"})
@@ -43,10 +47,13 @@ public class BaseTest {
         context.setDefaultNavigationTimeout(30_000);
         page = context.newPage();
         page.navigate(BASE_URL);
-        commonSteps = new CommonSteps(page);
 
+        commonSteps = new CommonSteps(page);
+        cardsSteps = new CardsSteps(page);
+        tbcCardSteps = new TbcCardSteps(page);
         CookieUtils.acceptIfVisible(page);
         new NavigationFlows(commonSteps, view).openCardsFromHome();
+
     }
 
     private Browser.NewContextOptions buildContextOptions(String view) {
@@ -67,6 +74,7 @@ public class BaseTest {
 
         return options;
     }
+
 
     @AfterClass
     public void tearDown() {

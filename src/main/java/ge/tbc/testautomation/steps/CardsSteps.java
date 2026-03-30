@@ -4,9 +4,9 @@ import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import ge.tbc.testautomation.pages.CardsPage;
 import io.qameta.allure.Step;
-
 import java.util.List;
 import java.util.stream.Collectors;
+
 
 public class CardsSteps {
     CardsPage cardsPage;
@@ -16,7 +16,7 @@ public class CardsSteps {
         cardsPage = new CardsPage(page);
         this.page = page;
     }
-
+  
     @Step
     public CardsSteps openCardDetails(){
         cardsPage.cardDetailsButton.click();
@@ -69,3 +69,4 @@ public class CardsSteps {
     public String getBannerTitle() {
         return cardsPage.cardSecurityBanner.innerText().trim();
     }}
+}
