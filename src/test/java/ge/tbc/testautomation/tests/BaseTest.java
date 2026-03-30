@@ -2,7 +2,6 @@ package ge.tbc.testautomation.tests;
 
 import com.microsoft.playwright.*;
 import ge.tbc.testautomation.steps.*;
-import ge.tbc.testautomation.steps.apisteps.ApiSteps;
 import ge.tbc.testautomation.utils.CookieUtils;
 import ge.tbc.testautomation.utils.NavigationFlows;
 import org.testng.annotations.*;
