@@ -6,7 +6,15 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public record Inputs(
         String title,
+        String bodyText,
+        String body,
+
         List<Button> buttons,
-        List<Slide> slides
+        Button button,
+
+        List<Slide> slides,
+        List<Card> cards,
+
+        List<ListItem> list
 ) {
 }

@@ -2,6 +2,7 @@ package ge.tbc.testautomation.tests;
 
 import com.microsoft.playwright.*;
 import ge.tbc.testautomation.steps.*;
+import ge.tbc.testautomation.steps.apisteps.ApiSteps;
 import ge.tbc.testautomation.utils.CookieUtils;
 import ge.tbc.testautomation.utils.NavigationFlows;
 import org.testng.annotations.*;
@@ -15,9 +16,10 @@ public class BaseTest {
     Playwright playwright;
     Browser browser;
     BrowserContext context;
-    Page page;
+    protected Page page;
     CommonSteps commonSteps;
     String view;
+
 
     @BeforeClass(alwaysRun = true)
     @Parameters({"browserType", "view"})
@@ -43,6 +45,7 @@ public class BaseTest {
         page = context.newPage();
         page.navigate(BASE_URL);
         commonSteps = new CommonSteps(page);
+
         CookieUtils.acceptIfVisible(page);
         new NavigationFlows(commonSteps, view).openCardsFromHome();
     }

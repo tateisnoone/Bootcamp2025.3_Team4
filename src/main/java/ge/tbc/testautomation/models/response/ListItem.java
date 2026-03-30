@@ -1,4 +1,9 @@
 package ge.tbc.testautomation.models.response;
 
-public record ListItem() {
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
+public record ListItem(
+        String label
+) {
 }

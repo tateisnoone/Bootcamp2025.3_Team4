@@ -1,12 +1,16 @@
 package ge.tbc.testautomation.steps.apisteps;
 
+import ge.tbc.testautomation.Constants;
 import ge.tbc.testautomation.api.PageApiCards;
 import ge.tbc.testautomation.models.response.PageResponse;
 import ge.tbc.testautomation.models.response.SectionComponent;
 import io.qameta.allure.Step;
 import org.testng.Assert;
 
+import java.util.List;
+
 public class ApiSteps {
+
     private final PageApiCards api = new PageApiCards();
 
     @Step("Get page by id: {pageId} and validate status 200")
@@ -20,85 +24,108 @@ public class ApiSteps {
                         .as(PageResponse.class);
 
         Assert.assertNotNull(response.sectionComponents(),
-                "sectionComponents is null");
+                Constants.SECTION_COMPONENTS_NOT_NULL);
 
         return response;
     }
 
-    @Step("Validate negative page")
-    public void validateNegativePage(String pageId) {
-        api.getPage(pageId)
-                .then()
-                .statusCode(404);
-    }
-
-    private SectionComponent getSectionByType(PageResponse response, String type) {
+    private SectionComponent getSection(PageResponse response, String type) {
         return response.sectionComponents()
                 .stream()
                 .filter(s -> type.equals(s.type()))
                 .findFirst()
-                .orElseThrow(() -> new RuntimeException("Section not found: " + type));
+                .orElseThrow(() -> new RuntimeException(Constants.SECTION_NOT_FOUND + type));
     }
 
-    //  TITLE
-    public String extractCtaTitle(PageResponse response) {
-        return getSectionByType(response, "ctaSection")
+    @Step("Get CTA list from API")
+    public List<String> getCtaList(PageResponse r) {
+        return getSection(r, "ctaSection")
                 .inputs()
-                .title();
+                .list()
+                .stream()
+                .map(item -> item.label())
+                .toList();
     }
 
-    //  BUTTON
-    public String extractCtaButtonLabel(PageResponse response) {
-        return getSectionByType(response, "ctaSection")
-                .inputs()
-                .buttons()
-                .get(0)
-                .label();
+    @Step("Get CTA title from API")
+    public String getCtaTitle(PageResponse r) {
+        return getSection(r, "ctaSection").inputs().title();
     }
 
-    // FIRST CARD TITLE
-    public String extractFirstCardTitle(PageResponse response) {
-        return getSectionByType(response, "cardsGridCarousel")
+    @Step("Get CTA button from API")
+    public String getCtaButton(PageResponse r) {
+        return getSection(r, "ctaSection").inputs().buttons().get(0).label();
+    }
+
+
+    @Step("Validate CTA title")
+    public void validateCtaTitle(String pageId, String uiTitle) {
+        PageResponse r = getPageAndValidate200(pageId);
+        Assert.assertEquals(getCtaTitle(r).trim(), uiTitle.trim(), Constants.CTA_TITLE_MISMATCH);
+    }
+
+
+    @Step("Validate CTA button")
+    public void validateCtaButton(String pageId, String uiButton) {
+        PageResponse r = getPageAndValidate200(pageId);
+        Assert.assertEquals(getCtaButton(r).trim(), uiButton.trim(), Constants.CTA_BUTTON_MISMATCH);
+    }
+
+    @Step("Validate CTA list")
+    public void validateCtaList(String pageId, List<String> uiList) {
+        PageResponse r = getPageAndValidate200(pageId);
+        Assert.assertEquals(getCtaList(r), uiList, Constants.CTA_LIST_MISMATCH);
+    }
+
+    @Step("Get cards from API")
+    public List<String> getCards(PageResponse r) {
+        return getSection(r, "cardsGridCarousel")
                 .inputs()
                 .slides()
                 .get(0)
                 .cards()
-                .get(0)
-                .title();
+                .stream()
+                .map(c -> c.title())
+                .toList();
     }
 
-    //  VALIDATIONS
 
-    @Step("Validate CTA title matches UI")
-    public void validateCtaTitleMatchesUi(String pageId, String uiTitle) {
-        PageResponse response = getPageAndValidate200(pageId);
-
-        Assert.assertEquals(
-                extractCtaTitle(response).trim(),
-                uiTitle.trim(),
-                "CTA title mismatch"
-        );
+    @Step("Validate cards content")
+    public void validateCardsContent(String pageId, List<String> uiCards) {
+        PageResponse r = getPageAndValidate200(pageId);
+        Assert.assertEquals(getCards(r), uiCards, Constants.CARDS_MISMATCH);
     }
 
-    @Step("Validate CTA button matches UI")
-    public void validateCtaButtonMatchesUi(String pageId, String uiLabel) {
-        PageResponse response = getPageAndValidate200(pageId);
 
-        Assert.assertEquals(
-                extractCtaButtonLabel(response).trim(),
-                uiLabel.trim(),
-                "CTA button mismatch"
-        );
+    @Step("Get old cards from API")
+    public List<String> getOldCards(PageResponse r) {
+        return getSection(r, "cardsCarousel")
+                .inputs()
+                .cards()
+                .stream()
+                .map(c -> c.title())
+                .toList();
     }
 
-    @Step("Validate first card title matches UI")
-    public void validateFirstCardMatchesUi(String pageId, String uiTitle) {
-        PageResponse response = getPageAndValidate200(pageId);
 
-        Assert.assertEquals(
-                extractFirstCardTitle(response).trim(),
-                uiTitle.trim(),
-                "Card title mismatch"
-        );
+    @Step("Validate old cards content")
+    public void validateOldCardsContent(String pageId, List<String> uiCards) {
+        PageResponse r = getPageAndValidate200(pageId);
+        Assert.assertEquals(getOldCards(r), uiCards, Constants.OLD_CARDS_MISMATCH);
     }
+
+
+    @Step("Get banner title from API")
+    public String getBannerTitle(PageResponse r) {
+        return getSection(r, "iconBannerSection").inputs().title();
+    }
+
+    @Step("Validate banner title")
+    public void validateBannerTitle(String pageId, String uiTitle) {
+        PageResponse r = getPageAndValidate200(pageId);
+        Assert.assertEquals(getBannerTitle(r).trim(), uiTitle.trim(), Constants.BANNER_MISMATCH);
+    }
+
+
+
 }
