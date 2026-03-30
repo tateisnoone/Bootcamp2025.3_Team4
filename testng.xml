@@ -4,14 +4,6 @@
 <suite name="TBC CrossBrowser Suite"
        parallel="classes"
        thread-count="3">
-
-
-        <listeners>
-            <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
-            <listener class-name="ge.tbc.testautomation.utils.CustomTestListener"/>
-        </listeners>
-
-
     <test name="Chrome Mobile">
         <parameter name="browserType" value="chrome"/>
         <parameter name="view" value="mobile"/>
