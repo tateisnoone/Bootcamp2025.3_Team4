@@ -16,7 +16,7 @@ public class BaseTest {
     Playwright playwright;
     Browser browser;
     BrowserContext context;
-    Page page;
+    protected Page page;
     String view;
 
     //STEPS
@@ -51,7 +51,6 @@ public class BaseTest {
         commonSteps = new CommonSteps(page);
         cardsSteps = new CardsSteps(page);
         tbcCardSteps = new TbcCardSteps(page);
-
         CookieUtils.acceptIfVisible(page);
         new NavigationFlows(commonSteps, view).openCardsFromHome();
 
