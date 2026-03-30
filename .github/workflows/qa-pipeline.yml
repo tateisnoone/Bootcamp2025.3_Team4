@@ -1,9 +1,9 @@
 name: QA Pipeline
 on:
   pull_request:
-    branches: [ main, master ]
+    branches: [ master ]
   push:
-    branches: [ main, pipeline-and-reporting ]
+    branches: [ master ]
   workflow_dispatch:
   schedule:
     - cron: '0 8 * * 1'
@@ -114,7 +114,7 @@ jobs:
     name: Deploy Allure Report to GitHub Pages
     runs-on: ubuntu-latest
     needs: generate-allure-report
-    if: always() && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/pipeline-and-reporting')
+    if: always() && (github.ref == 'refs/heads/master')
 
     environment:
       name: github-pages

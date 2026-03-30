@@ -17,7 +17,6 @@
         <parameter name="view" value="desktop"/>
         <classes>
             <class name="ge.tbc.testautomation.tests.CardsApiUiTests"/>
-            <class name="ge.tbc.testautomation.tests.TestTest"/>
         </classes>
     </test>
 
