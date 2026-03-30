@@ -39,7 +39,7 @@ public class ApiSteps {
 
     @Step("Get CTA list from API")
     public List<String> getCtaList(PageResponse r) {
-        return getSection(r, "ctaSection")
+        return getSection(r, Constants.CTA_SECTION)
                 .inputs()
                 .list()
                 .stream()
@@ -49,12 +49,12 @@ public class ApiSteps {
 
     @Step("Get CTA title from API")
     public String getCtaTitle(PageResponse r) {
-        return getSection(r, "ctaSection").inputs().title();
+        return getSection(r, Constants.CTA_SECTION).inputs().title();
     }
 
     @Step("Get CTA button from API")
     public String getCtaButton(PageResponse r) {
-        return getSection(r, "ctaSection").inputs().buttons().get(0).label();
+        return getSection(r, Constants.CTA_SECTION).inputs().buttons().get(0).label();
     }
 
 
@@ -79,7 +79,7 @@ public class ApiSteps {
 
     @Step("Get cards from API")
     public List<String> getCards(PageResponse r) {
-        return getSection(r, "cardsGridCarousel")
+        return getSection(r, Constants.CARDS_GRID_CAROUSEL)
                 .inputs()
                 .slides()
                 .get(0)
@@ -99,7 +99,7 @@ public class ApiSteps {
 
     @Step("Get old cards from API")
     public List<String> getOldCards(PageResponse r) {
-        return getSection(r, "cardsCarousel")
+        return getSection(r, Constants.CARDS_CAROUSEL)
                 .inputs()
                 .cards()
                 .stream()
@@ -117,7 +117,7 @@ public class ApiSteps {
 
     @Step("Get banner title from API")
     public String getBannerTitle(PageResponse r) {
-        return getSection(r, "iconBannerSection").inputs().title();
+        return getSection(r, Constants.ICON_BANNER).inputs().title();
     }
 
     @Step("Validate banner title")
