@@ -1,6 +1,5 @@
 package ge.tbc.testautomation.config;
 
-
 import io.qameta.allure.restassured.AllureRestAssured;
 
 import static ge.tbc.testautomation.Constants.*;

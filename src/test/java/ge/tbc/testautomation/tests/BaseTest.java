@@ -1,8 +1,8 @@
 package ge.tbc.testautomation.tests;
 
 import com.microsoft.playwright.*;
-import ge.tbc.testautomation.pages.TbcCardPage;
 import ge.tbc.testautomation.steps.*;
+import ge.tbc.testautomation.steps.apisteps.ApiSteps;
 import ge.tbc.testautomation.utils.CookieUtils;
 import ge.tbc.testautomation.utils.NavigationFlows;
 import org.testng.annotations.*;
@@ -16,13 +16,13 @@ public class BaseTest {
     Playwright playwright;
     Browser browser;
     BrowserContext context;
-    protected Page page;
+    Page page;
     String view;
-
     //STEPS
     CommonSteps commonSteps;
     CardsSteps cardsSteps;
     TbcCardSteps tbcCardSteps;
+    ApiSteps apiSteps;
 
     @BeforeClass(alwaysRun = true)
     @Parameters({"browserType", "view"})
@@ -51,9 +51,9 @@ public class BaseTest {
         commonSteps = new CommonSteps(page);
         cardsSteps = new CardsSteps(page);
         tbcCardSteps = new TbcCardSteps(page);
+        apiSteps = new ApiSteps();
         CookieUtils.acceptIfVisible(page);
         new NavigationFlows(commonSteps, view).openCardsFromHome();
-
     }
 
     private Browser.NewContextOptions buildContextOptions(String view) {

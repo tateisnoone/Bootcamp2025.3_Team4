@@ -61,7 +61,6 @@ public class CommonSteps {
         return this;
     }
 
-
     public boolean isCardsBtnVisibleMobile() {
         return commonPage.mobileCardsBtn.isVisible(new Locator.IsVisibleOptions().setTimeout(1500));
     }

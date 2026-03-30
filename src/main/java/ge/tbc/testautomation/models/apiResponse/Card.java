@@ -1,9 +1,6 @@
-package ge.tbc.testautomation.models.response;
+package ge.tbc.testautomation.models.apiResponse;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public record Card(
-        String title
-) {
-}
+public record Card(String title) {}

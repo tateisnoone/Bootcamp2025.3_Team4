@@ -23,7 +23,7 @@
         <parameter name="browserType" value="chrome"/>
         <parameter name="view" value="desktop"/>
         <classes>
-<!--            <class name=""/>-->
+            <class name="ge.tbc.testautomation.tests.CardsApiUiTests"/>
         </classes>
     </test>
 

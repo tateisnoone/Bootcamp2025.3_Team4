@@ -1,4 +1,4 @@
-package ge.tbc.testautomation.models.response;
+package ge.tbc.testautomation.models.apiResponse;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -6,5 +6,4 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public record SectionComponent(
         String type,
         Inputs inputs
-) {
-}
+) {}

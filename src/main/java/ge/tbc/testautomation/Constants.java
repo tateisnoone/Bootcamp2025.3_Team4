@@ -27,7 +27,7 @@ public class Constants {
     public static final String ICON_BANNER ="iconBannerSection";
 
     public static final String VALID_PAGE_ID = "42QIbP7GGWzmhrXpSV3iA4";
-    public static final String BASE_URI = "https://apigw.tbcbank.ge;";
+    public static final String BASE_URI = "https://apigw.tbcbank.ge";
     public static final String BASE_PATH = "/api/v1/sites/pages/{pageId}";
     public static final String PATH_PARAM_PAGE_ID = "pageId";
     public static final String LOCALE = "locale";

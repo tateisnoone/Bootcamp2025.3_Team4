@@ -1,12 +1,11 @@
 package ge.tbc.testautomation.api;
 
 import ge.tbc.testautomation.Constants;
-import groovyjarjarantlr4.runtime.tree.CommonTreeNodeStream;
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
 
-public class PageApiCards extends BaseApiCards{
+public class PageApiCards extends BaseApiCards {
     public Response getPage(String pageId) {
         return given()
                 .spec(REQ_SPEC)

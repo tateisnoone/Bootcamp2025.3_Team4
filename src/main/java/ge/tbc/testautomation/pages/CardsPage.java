@@ -8,16 +8,20 @@ import ge.tbc.testautomation.Constants;
 public class CardsPage {
 
     public Locator cardDetailsButton,
-    header,
-    otherCards,
-    ertguliCardLink,
-    studentsCardLink,
-    pupilsCardLink,
-    oldCardsTitle,
-    cardSecurityBanner,
-    oldCardsList;
+            header,
+            otherCards,
+            ertguliCardLink,
+            studentsCardLink,
+            pupilsCardLink,
+            oldCardsTitle,
+            cardSecurityBanner,
+            oldCardsList,
+            ertguliCardTitle,
+            studentsCardTitle,
+            pupilsCardTitle,
+            ctaListItems;
 
-    public CardsPage(Page page){
+    public CardsPage(Page page) {
         this.cardDetailsButton = page.locator("button:has-text('დეტალურად')");
         this.header = page.locator(".tbcx-pw-cta-section__info__title").first();
         this.otherCards = page.getByText(Constants.OTHER_CARDS);
@@ -30,5 +34,12 @@ public class CardsPage {
         this.oldCardsTitle = page.getByText(Constants.OLD_CARDS);
         this.cardSecurityBanner = page.getByText(Constants.CARD_SAFETY_SERVICES);
         this.oldCardsList = page.locator(".tbcx-pw-carousel__card h2.tbcx-pw-card__title");
+        this.ertguliCardTitle = ertguliCardLink.locator("h2");
+        this.studentsCardTitle = studentsCardLink.locator("h2");
+        this.pupilsCardTitle = pupilsCardLink.locator("h2");
+        this.ctaListItems = page.locator(".tbcx-pw-list")
+                .first()
+                .locator(".tbcx-list-item__text");
     }
 }
+
