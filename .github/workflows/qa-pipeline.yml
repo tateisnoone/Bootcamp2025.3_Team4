@@ -1,10 +1,9 @@
 name: QA Pipeline
-
 on:
   pull_request:
     branches: [ main, master ]
   push:
-    branches: [ main, master ]
+    branches: [ main, pipeline-and-reporting ]
   workflow_dispatch:
   schedule:
     - cron: '0 8 * * 1'
