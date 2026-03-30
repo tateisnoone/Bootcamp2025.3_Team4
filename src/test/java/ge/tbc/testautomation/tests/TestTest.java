@@ -17,7 +17,7 @@ public class TestTest extends BaseTest {
     }
     @Test(priority = 2)
     public void failureTest() {
-        Assert.assertTrue(false, "Test failure for Allure demo");
+        Assert.assertTrue(false, "Test failure for Allure");
     }
 
 
