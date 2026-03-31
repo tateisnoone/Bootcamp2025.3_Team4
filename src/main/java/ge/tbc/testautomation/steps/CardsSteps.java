@@ -21,6 +21,12 @@ public class CardsSteps {
         return this;
     }
 
+    @Step("Navigate to Ertguli Credit Card page")
+    public CardsSteps navigateToErtguliCreditCardPage(){
+        cardsPage.ertguliCardLink.click();
+        return this;
+    }
+
     @Step("Get CTA title")
     public String getMainTitle() {
         return getTrimmedText(cardsPage.header);
