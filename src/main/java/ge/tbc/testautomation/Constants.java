@@ -42,6 +42,18 @@ public class Constants {
     public static final String OLD_CARDS = "ძველი ბარათები";
     public static final String CARD_SAFETY_SERVICES = "ბარათის უსაფრთხოების სერვისი";
     public static final String QR_CODE_DATA = "https://app.tbcbank.ge/YiId/vdigxphg";
+
+    // Ertguli Credit Card page
+
+    public static final String ORDER_CARD_TXT= "შეუკვეთე ბარათი";
+    public static final String NAME_AND_SURNAME_TXT = "სახელი და გვარი";
+    public static final String PERSONAL_NUMBER_TXT = "პირადი ნომერი";
+    public static final String PHONE_NUMBER_TXT = "ტელეფონის ნომერი";
+    // Error Messages of Ertguli Credit Card Page Form
+    public static final String ERROR_NAME_AND_SURNAME_TXT = "სახელი და გვარი ფორმატი არასწორია";
+    public static final String ERROR_PERSONAL_NUMBER_TXT = "პირადი ნომერი ფორმატი არასწორია";
+    public static final String ERROR_PHONE_NUMBER_TXT = "ტელეფონის ნომერი ფორმატი არასწორია";
+
     //DB
     public static final String DB_DRIVER = "org.h2.Driver";
     public static final String DEVELOPMENT = "development";

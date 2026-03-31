@@ -25,6 +25,7 @@ public class BaseTest {
     //STEPS
     CommonSteps commonSteps;
     CardsSteps cardsSteps;
+    ErtguliCreditCardSteps ertguliCreditCardSteps;
     TbcCardSteps tbcCardSteps;
     ApiSteps apiSteps;
 
@@ -67,6 +68,7 @@ public class BaseTest {
 
         commonSteps = new CommonSteps(page);
         cardsSteps = new CardsSteps(page);
+        ertguliCreditCardSteps = new ErtguliCreditCardSteps(page);
         tbcCardSteps = new TbcCardSteps(page);
         apiSteps = new ApiSteps();
         CookieUtils.acceptIfVisible(page);
