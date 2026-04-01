@@ -2,6 +2,7 @@ package ge.tbc.testautomation.tests;
 
 import org.testng.annotations.Test;
 
+@Test(groups = {"Apply for TBC Card QR code should contain correct URL T4-T1"})
 public class QRCodeTest extends BaseTest {
 
     @Test(priority = 1)
