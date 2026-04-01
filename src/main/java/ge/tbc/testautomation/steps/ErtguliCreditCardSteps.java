@@ -23,12 +23,12 @@ public class ErtguliCreditCardSteps {
     }
 
     public ErtguliCreditCardSteps typePersonalNumber(String numbers){
-        ertguliCreditCardPage.personalNumberInput.pressSequentially(numbers);
+        ertguliCreditCardPage.personalNumberInput.fill(numbers);
         return this;
     }
 
     public ErtguliCreditCardSteps typePhoneNumber(String phoneNumber) {
-        ertguliCreditCardPage.phoneNumberInput.pressSequentially(phoneNumber);
+        ertguliCreditCardPage.phoneNumberInput.fill(phoneNumber);
         return this;
     }
 
