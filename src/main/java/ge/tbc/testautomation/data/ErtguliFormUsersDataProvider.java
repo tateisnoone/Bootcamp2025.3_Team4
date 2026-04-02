@@ -2,9 +2,7 @@ package ge.tbc.testautomation.data;
 
 import org.testng.annotations.DataProvider;
 
-import static ge.tbc.testautomation.Constants.*;
-
-public class NegativeUsersDataProvider {
+public class ErtguliFormUsersDataProvider {
     @DataProvider(name = "invalidFormData")
     public static Object[][] invalidFormData() {
         return new Object[][] {
@@ -22,6 +20,13 @@ public class NegativeUsersDataProvider {
         return new Object[][] {
                 {"DexterDidItellYouThatImissyous0ng", "7777", "571"},
                 {"DexterMorganS4EP12", "0293", "1098547109755"}
+        };
+    }
+
+    @DataProvider(name = "validPastedFullFormData")
+    public static Object[][] validPastedFullFormData(){
+        return new Object[][] {
+                {"სახელი გვარი", "01001111111", "597-00-00-00"}
         };
     }
 }

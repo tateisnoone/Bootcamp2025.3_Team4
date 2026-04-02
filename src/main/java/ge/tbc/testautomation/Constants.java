@@ -49,15 +49,17 @@ public class Constants {
     public static final String NAME_AND_SURNAME_TXT = "სახელი და გვარი";
     public static final String PERSONAL_NUMBER_TXT = "პირადი ნომერი";
     public static final String PHONE_NUMBER_TXT = "ტელეფონის ნომერი";
+    public static final String SUBMIT_BUTTON_TXT = "მოითხოვე ზარი";
     // Error Messages of Ertguli Credit Card Page Form
     public static final String ERROR_NAME_AND_SURNAME_TXT = "სახელი და გვარი ფორმატი არასწორია";
     public static final String ERROR_PERSONAL_NUMBER_TXT = "პირადი ნომერი ფორმატი არასწორია";
     public static final String ERROR_PHONE_NUMBER_TXT = "ტელეფონის ნომერი ფორმატი არასწორია";
+    public static final String ERROR_PHONE_NUMBER_WHEN_FORMATTING_CHARACTERS_TXT = "ტელეფონის ნომერი ველი სავალდებულოა.";
 
     //DB
     public static final String DB_DRIVER = "org.h2.Driver";
     public static final String DEVELOPMENT = "development";
     public static final String DB_URL =
-            "jdbc:h2:tcp://localhost:9093/./companyDB;MODE=MSSQLServer;DATABASE_TO_UPPER=FALSE;CASE_INSENSITIVE_IDENTIFIERS=TRUE";
+            "jdbc:h2:mem:testdb;MODE=MSSQLServer;DATABASE_TO_UPPER=FALSE;CASE_INSENSITIVE_IDENTIFIERS=TRUE;DB_CLOSE_DELAY=-1";
     public static final String DB_USER = "sa";
  }
