@@ -5,24 +5,23 @@ import org.testng.annotations.DataProvider;
 import static ge.tbc.testautomation.Constants.*;
 
 public class NegativeUsersDataProvider {
-    @DataProvider(name = "invalidNameData")
-    public static Object[][] invalidNameData() {
+    @DataProvider(name = "invalidFormData")
+    public static Object[][] invalidFormData() {
         return new Object[][] {
-                {"DexterMorganS4EP12", ERROR_NAME_AND_SURNAME_TXT},
+                {"DexterMorganS4EP12"},
+                {"BrianMoserS1EP12"},
+                {"7777"},
+                {"9999"},
+                {"571"},
+                {"1098547109755"}
         };
     }
 
-    @DataProvider(name = "invalidPersonalNumberData")
-    public static Object[][] invalidPersonalNumberData() {
+    @DataProvider(name = "invalidFullFormData")
+    public static Object[][] invalidFullFormData() {
         return new Object[][] {
-                {"7777", ERROR_PERSONAL_NUMBER_TXT},
-        };
-    }
-
-    @DataProvider(name = "invalidPhoneData")
-    public static Object[][] invalidPhoneData() {
-        return new Object[][] {
-                {"571", ERROR_PHONE_NUMBER_TXT},
+                {"DexterDidItellYouThatImissyous0ng", "7777", "571"},
+                {"DexterMorganS4EP12", "0293", "1098547109755"}
         };
     }
 }
