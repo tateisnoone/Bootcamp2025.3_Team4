@@ -3,7 +3,7 @@
 
 <suite name="TBC CrossBrowser Suite"
        parallel="classes"
-       thread-count="2">
+       thread-count="3">
     <test name="Chrome Mobile">
         <parameter name="browserType" value="chrome"/>
         <parameter name="view" value="mobile"/>
@@ -24,24 +24,28 @@
         </classes>
     </test>
 
-<!--    <test name="Webkit Desktop">-->
-<!--        <parameter name="browserType" value="webkit"/>-->
-<!--        <parameter name="view" value="desktop"/>-->
-<!--        <classes>-->
-<!--            <class name="ge.tbc.testautomation.tests.CardsApiUiTests"/>-->
-<!--            <class name="ge.tbc.testautomation.tests.ContactFormEdgeCaseTest"/>-->
-<!--            <class name="ge.tbc.testautomation.tests.ContactFormNegativeValuesValidationTests"/>-->
-<!--            <class name="ge.tbc.testautomation.tests.ContactFormPositiveScenarioTest"/>-->
-<!--            <class name="ge.tbc.testautomation.tests.QRCodeTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Webkit Desktop">
+        <parameter name="browserType" value="webkit"/>
+        <parameter name="view" value="desktop"/>
+        <classes>
+            <class name="ge.tbc.testautomation.tests.CardsApiUiTests"/>
+            <class name="ge.tbc.testautomation.tests.ContactFormEdgeCaseTest"/>
+            <class name="ge.tbc.testautomation.tests.ContactFormNegativeValuesValidationTests"/>
+            <class name="ge.tbc.testautomation.tests.ContactFormPositiveScenarioTest"/>
+            <class name="ge.tbc.testautomation.tests.QRCodeTest"/>
+        </classes>
+    </test>
 
-<!--    <test name="Edge Desktop">-->
-<!--        <parameter name="browserType" value="edge"/>-->
-<!--        <parameter name="view" value="desktop"/>-->
-<!--        <classes>-->
-<!--            <class name="ge.tbc.testautomation.tests.CardsApiUiTests"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Edge Desktop">
+        <parameter name="browserType" value="edge"/>
+        <parameter name="view" value="desktop"/>
+        <classes>
+            <class name="ge.tbc.testautomation.tests.CardsApiUiTests"/>
+            <class name="ge.tbc.testautomation.tests.ContactFormEdgeCaseTest"/>
+            <class name="ge.tbc.testautomation.tests.ContactFormNegativeValuesValidationTests"/>
+            <class name="ge.tbc.testautomation.tests.ContactFormPositiveScenarioTest"/>
+            <class name="ge.tbc.testautomation.tests.QRCodeTest"/>
+        </classes>
+    </test>
 
 </suite>
