@@ -8,7 +8,7 @@ import java.util.List;
 
 public class UsersDbDataProvider {
 
-    @DataProvider(name = "usersDBCases")
+    @DataProvider(name = "usersDBCases", parallel = true)
     public static Object[][] usersDBCases() {
         List<Users> cases = DataBaseConfig.dbMapper().selectAllUsers();
         Object[][] data = new Object[cases.size()][3];
