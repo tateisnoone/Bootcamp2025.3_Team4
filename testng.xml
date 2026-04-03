@@ -19,6 +19,10 @@
         <classes>
             <class name="ge.tbc.testautomation.tests.CardsApiUiTests"/>
             <class name="ge.tbc.testautomation.tests.QNASectionTest"/>
+            <class name="ge.tbc.testautomation.tests.ContactFormEdgeCaseTest"/>
+            <class name="ge.tbc.testautomation.tests.ContactFormNegativeValuesValidationTests"/>
+            <class name="ge.tbc.testautomation.tests.ContactFormPositiveScenarioTest"/>
+            <class name="ge.tbc.testautomation.tests.QRCodeTest"/>
         </classes>
     </test>
 
@@ -28,15 +32,23 @@
         <classes>
             <class name="ge.tbc.testautomation.tests.CardsApiUiTests"/>
             <class name="ge.tbc.testautomation.tests.QNASectionTest"/>
+            <class name="ge.tbc.testautomation.tests.ContactFormEdgeCaseTest"/>
+            <class name="ge.tbc.testautomation.tests.ContactFormNegativeValuesValidationTests"/>
+            <class name="ge.tbc.testautomation.tests.ContactFormPositiveScenarioTest"/>
+            <class name="ge.tbc.testautomation.tests.QRCodeTest"/>
         </classes>
     </test>
 
-<!--    <test name="Edge Desktop">-->
-<!--        <parameter name="browserType" value="edge"/>-->
-<!--        <parameter name="view" value="desktop"/>-->
-<!--        <classes>-->
-<!--            <class name="ge.tbc.testautomation.tests.CardsApiUiTests"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Edge Desktop">
+        <parameter name="browserType" value="edge"/>
+        <parameter name="view" value="desktop"/>
+        <classes>
+            <class name="ge.tbc.testautomation.tests.CardsApiUiTests"/>
+            <class name="ge.tbc.testautomation.tests.ContactFormEdgeCaseTest"/>
+            <class name="ge.tbc.testautomation.tests.ContactFormNegativeValuesValidationTests"/>
+            <class name="ge.tbc.testautomation.tests.ContactFormPositiveScenarioTest"/>
+            <class name="ge.tbc.testautomation.tests.QRCodeTest"/>
+        </classes>
+    </test>
 
 </suite>

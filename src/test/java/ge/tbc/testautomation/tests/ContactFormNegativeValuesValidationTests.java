@@ -2,25 +2,24 @@ package ge.tbc.testautomation.tests;
 
 import ge.tbc.testautomation.data.FieldType;
 import ge.tbc.testautomation.data.InputClassifier;
-import ge.tbc.testautomation.data.NegativeUsersDataProvider;
+import ge.tbc.testautomation.data.ErtguliFormUsersDataProvider;
 import ge.tbc.testautomation.utils.CookieUtils;
 import ge.tbc.testautomation.utils.NavigationFlows;
+import ge.tbc.testautomation.utils.RetryCount;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static ge.tbc.testautomation.Constants.*;
 
-public class ContactFormTests extends BaseTest{
+public class ContactFormNegativeValuesValidationTests extends BaseTest{
 
     @AfterMethod(alwaysRun = true)
     public void setupMethod() {
         page.navigate(BASE_URL);
-        CookieUtils.acceptIfVisible(page);
         new NavigationFlows(commonSteps, view).openCardsFromHome();
     }
-
-    @Test(dataProvider = "invalidFormData", dataProviderClass = NegativeUsersDataProvider.class)
+    @RetryCount(count = 3)
+    @Test(dataProvider = "invalidFormData", dataProviderClass = ErtguliFormUsersDataProvider.class)
     public void validateInvalidInput(String value) {
 
         FieldType type = InputClassifier.resolve(value);
@@ -45,7 +44,7 @@ public class ContactFormTests extends BaseTest{
         }
     }
 
-    @Test(dataProvider = "invalidFullFormData", dataProviderClass = NegativeUsersDataProvider.class)
+    @Test(dataProvider = "invalidFullFormData", dataProviderClass = ErtguliFormUsersDataProvider.class)
     public void validateMultipleInvalidFields(String name, String personal, String phone) {
         cardsSteps.navigateToErtguliCreditCardPage();
 
