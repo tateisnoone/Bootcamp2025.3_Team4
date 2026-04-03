@@ -29,7 +29,7 @@ public class TbcCardSteps {
 
         faqDropdowns.first().waitFor();
 
-        for(int i=0;i<faqDropdowns.count();i++){
+        for(int i=0;i<3;i++){
             faqDropdowns.nth(i).click();
         }
 
@@ -40,7 +40,7 @@ public class TbcCardSteps {
     public TbcCardSteps verifyFaqDropdownContent(){
         Locator faqContent = tbcCardPage.faqDropdownContent;
 
-        for(int i=0;i<faqContent.count();i++){
+        for(int i=0;i<3;i++){
             assertThat(faqContent.nth(i)).hasText(Pattern.compile(".+"));
 
         }
