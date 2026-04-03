@@ -3,17 +3,19 @@ package ge.tbc.testautomation.pages;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
+import groovyjarjarpicocli.CommandLine;
 
 import static ge.tbc.testautomation.Constants.*;
 
 public class ErtguliCreditCardPage {
-    Page page;
+    public Page page;
 
     public Locator
             orderCardBtn,
             nameAndSurnameInput,
             personalNumberInput,
-            phoneNumberInput;
+            phoneNumberInput,
+            submitBtn;
 
     public ErtguliCreditCardPage(Page page) {
         this.page = page;
@@ -21,6 +23,7 @@ public class ErtguliCreditCardPage {
         this.nameAndSurnameInput = page.getByRole(AriaRole.TEXTBOX, new Page.GetByRoleOptions().setName(NAME_AND_SURNAME_TXT));
         this.personalNumberInput = page.getByRole(AriaRole.SPINBUTTON, new Page.GetByRoleOptions().setName(PERSONAL_NUMBER_TXT));
         this.phoneNumberInput = page.getByRole(AriaRole.SPINBUTTON, new Page.GetByRoleOptions().setName(PHONE_NUMBER_TXT));
+        this.submitBtn = page.getByRole(AriaRole.BUTTON, new Page.GetByRoleOptions().setName(SUBMIT_BUTTON_TXT));
     }
 
     public Locator getErrorMessageByText(String text) {
