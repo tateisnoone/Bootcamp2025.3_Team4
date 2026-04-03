@@ -1,9 +1,12 @@
 package ge.tbc.testautomation.steps;
 
+import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import ge.tbc.testautomation.pages.TbcCardPage;
 import ge.tbc.testautomation.utils.QRReader;
 import io.qameta.allure.Step;
+
+import java.util.regex.Pattern;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 import static ge.tbc.testautomation.Constants.QR_CODE_DATA;
@@ -20,6 +23,31 @@ public class TbcCardSteps {
         return this;
     }
 
+    @Step
+    public TbcCardSteps expandFaqDropdowns() {
+        Locator faqDropdowns = tbcCardPage.faqDropdowns;
+
+        faqDropdowns.first().waitFor();
+
+        for(int i=0;i<faqDropdowns.count();i++){
+            faqDropdowns.nth(i).click();
+        }
+
+        return this;
+    }
+
+    @Step
+    public TbcCardSteps verifyFaqDropdownContent(){
+        Locator faqContent = tbcCardPage.faqDropdownContent;
+
+        for(int i=0;i<faqContent.count();i++){
+            assertThat(faqContent.nth(i)).hasText(Pattern.compile(".+"));
+
+        }
+
+        return this;
+    }
+
     //Desktop Only
     @Step
     public TbcCardSteps validateQrCode() throws Exception {
@@ -30,4 +58,5 @@ public class TbcCardSteps {
 
         return this;
     }
+
 }
