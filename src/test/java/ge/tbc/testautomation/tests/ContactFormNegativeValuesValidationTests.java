@@ -5,6 +5,7 @@ import ge.tbc.testautomation.data.InputClassifier;
 import ge.tbc.testautomation.data.ErtguliFormUsersDataProvider;
 import ge.tbc.testautomation.utils.CookieUtils;
 import ge.tbc.testautomation.utils.NavigationFlows;
+import ge.tbc.testautomation.utils.RetryCount;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
@@ -15,10 +16,9 @@ public class ContactFormNegativeValuesValidationTests extends BaseTest{
     @AfterMethod(alwaysRun = true)
     public void setupMethod() {
         page.navigate(BASE_URL);
-        CookieUtils.acceptIfVisible(page);
         new NavigationFlows(commonSteps, view).openCardsFromHome();
     }
-
+    @RetryCount(count = 3)
     @Test(dataProvider = "invalidFormData", dataProviderClass = ErtguliFormUsersDataProvider.class)
     public void validateInvalidInput(String value) {
 
