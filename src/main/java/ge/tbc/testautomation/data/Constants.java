@@ -1,4 +1,4 @@
-package ge.tbc.testautomation;
+package ge.tbc.testautomation.data;
 
 public class Constants {
     public static final String BASE_URL = "https://tbcbank.ge/";
@@ -11,7 +11,6 @@ public class Constants {
     public static final String CARDS_TXT = "ბარათები";
 
     // api
-    public static final String COMPONENTS_NULL_ERROR = "Section components should not be null";
     public static final String SECTION_COMPONENTS_NOT_NULL = "Section components should not be null";
     public static final String SECTION_NOT_FOUND = "Section not found: ";
     public static final String CTA_TITLE_MISMATCH = "CTA title mismatch";
@@ -55,7 +54,6 @@ public class Constants {
     public static final String ERROR_NAME_AND_SURNAME_TXT = "სახელი და გვარი ფორმატი არასწორია";
     public static final String ERROR_PERSONAL_NUMBER_TXT = "პირადი ნომერი ფორმატი არასწორია";
     public static final String ERROR_PHONE_NUMBER_TXT = "ტელეფონის ნომერი ფორმატი არასწორია";
-    public static final String ERROR_PHONE_NUMBER_WHEN_FORMATTING_CHARACTERS_TXT = "ტელეფონის ნომერი ველი სავალდებულოა.";
 
     //DB
     public static final String DB_DRIVER = "org.h2.Driver";

@@ -15,7 +15,7 @@ import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.util.Objects;
 
-import static ge.tbc.testautomation.Constants.*;
+import static ge.tbc.testautomation.data.Constants.*;
 
 public class DataBaseConfig {
     public static UsersMapper dbMapper() {

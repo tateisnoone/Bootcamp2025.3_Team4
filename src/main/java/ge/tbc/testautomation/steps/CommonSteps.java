@@ -6,7 +6,7 @@ import ge.tbc.testautomation.pages.CommonPage;
 import io.qameta.allure.Step;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
-import static ge.tbc.testautomation.Constants.*;
+import static ge.tbc.testautomation.data.Constants.*;
 
 public class CommonSteps {
     public final CommonPage commonPage;

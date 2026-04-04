@@ -8,7 +8,7 @@ import io.qameta.allure.Step;
 import java.util.regex.Pattern;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
-import static ge.tbc.testautomation.Constants.QR_CODE_DATA;
+import static ge.tbc.testautomation.data.Constants.QR_CODE_DATA;
 import static org.testng.AssertJUnit.assertEquals;
 
 public class TbcCardSteps {

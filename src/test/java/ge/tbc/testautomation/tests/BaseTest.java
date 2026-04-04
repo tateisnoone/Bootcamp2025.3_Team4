@@ -10,7 +10,7 @@ import ge.tbc.testautomation.utils.NavigationFlows;
 import ge.tbc.testautomation.utils.PageManager;
 import org.testng.annotations.*;
 
-import static ge.tbc.testautomation.Constants.BASE_URL;
+import static ge.tbc.testautomation.data.Constants.BASE_URL;
 
 @Listeners({
         io.qameta.allure.testng.AllureTestNg.class,

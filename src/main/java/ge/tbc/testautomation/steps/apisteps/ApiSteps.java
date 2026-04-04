@@ -1,6 +1,6 @@
 package ge.tbc.testautomation.steps.apisteps;
 
-import ge.tbc.testautomation.Constants;
+import ge.tbc.testautomation.data.Constants;
 import ge.tbc.testautomation.api.PageApiCards;
 import ge.tbc.testautomation.models.apiResponse.Card;
 import ge.tbc.testautomation.models.apiResponse.ListItem;
@@ -11,7 +11,7 @@ import org.testng.Assert;
 
 import java.util.List;
 
-import static ge.tbc.testautomation.Constants.*;
+import static ge.tbc.testautomation.data.Constants.*;
 
 public class ApiSteps {
 

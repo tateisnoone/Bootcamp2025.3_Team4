@@ -2,7 +2,7 @@ package ge.tbc.testautomation.utils;
 
 import ge.tbc.testautomation.steps.CommonSteps;
 
-import static ge.tbc.testautomation.Constants.MOBILE;
+import static ge.tbc.testautomation.data.Constants.MOBILE;
 
 public class NavigationFlows {
     private final CommonSteps commonSteps;

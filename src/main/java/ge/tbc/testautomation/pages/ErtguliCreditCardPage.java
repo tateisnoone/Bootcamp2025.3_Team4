@@ -4,7 +4,7 @@ import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
 
-import static ge.tbc.testautomation.Constants.*;
+import static ge.tbc.testautomation.data.Constants.*;
 
 public class ErtguliCreditCardPage {
     public Page page;

@@ -7,7 +7,7 @@ import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import org.testng.annotations.Test;
 
-import static ge.tbc.testautomation.Constants.VALID_PAGE_ID;
+import static ge.tbc.testautomation.data.Constants.VALID_PAGE_ID;
 
 @Epic("API Integration")
 @Feature("Cards Page")

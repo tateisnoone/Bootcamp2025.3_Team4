@@ -3,7 +3,7 @@ package ge.tbc.testautomation.pages;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 
-import static ge.tbc.testautomation.Constants.*;
+import static ge.tbc.testautomation.data.Constants.*;
 
 
 public class CommonPage {

@@ -5,7 +5,7 @@ import com.microsoft.playwright.Browser;
 import java.util.ArrayList;
 import java.util.List;
 
-import static ge.tbc.testautomation.Constants.MOBILE;
+import static ge.tbc.testautomation.data.Constants.MOBILE;
 
 public final class ContextOptionsFactory {
 

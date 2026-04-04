@@ -5,7 +5,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import static ge.tbc.testautomation.Constants.*;
+import static ge.tbc.testautomation.data.Constants.*;
 
 @Test(groups = {"Ertguli Card Contact Form - Invalid inputs should not be allowed T4-T2"})
 public class ContactFormNegativeValuesValidationTests extends BaseTest {

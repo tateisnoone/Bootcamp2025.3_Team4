@@ -1,6 +1,6 @@
 package ge.tbc.testautomation.api;
 
-import ge.tbc.testautomation.Constants;
+import ge.tbc.testautomation.data.Constants;
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
