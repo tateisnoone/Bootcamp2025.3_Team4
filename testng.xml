@@ -9,6 +9,7 @@
         <parameter name="view" value="mobile"/>
         <classes>
             <class name="ge.tbc.testautomation.tests.CardsApiUiTests"/>
+            <class name="ge.tbc.testautomation.tests.QNASectionTest"/>
         </classes>
     </test>
 
@@ -17,6 +18,7 @@
         <parameter name="view" value="desktop"/>
         <classes>
             <class name="ge.tbc.testautomation.tests.CardsApiUiTests"/>
+            <class name="ge.tbc.testautomation.tests.QNASectionTest"/>
             <class name="ge.tbc.testautomation.tests.ContactFormEdgeCaseTest"/>
             <class name="ge.tbc.testautomation.tests.ContactFormNegativeValuesValidationTests"/>
             <class name="ge.tbc.testautomation.tests.ContactFormPositiveScenarioTest"/>
@@ -29,6 +31,7 @@
         <parameter name="view" value="desktop"/>
         <classes>
             <class name="ge.tbc.testautomation.tests.CardsApiUiTests"/>
+            <class name="ge.tbc.testautomation.tests.QNASectionTest"/>
             <class name="ge.tbc.testautomation.tests.ContactFormEdgeCaseTest"/>
             <class name="ge.tbc.testautomation.tests.ContactFormNegativeValuesValidationTests"/>
             <class name="ge.tbc.testautomation.tests.ContactFormPositiveScenarioTest"/>
