@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Desktop Suite" parallel="tests" thread-count="3">
+
+    <test name="Chrome Desktop">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="ge.tbc.testautomation.uitests.AnonymousTipTest"/>
+            <class name="ge.tbc.testautomation.uitests.ChatBotTest"/>
+        </classes>
+    </test>
+
+    <test name="Firefox Desktop">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="ge.tbc.testautomation.uitests.AnonymousTipTest"/>
+            <class name="ge.tbc.testautomation.uitests.ChatBotTest"/>
+        </classes>
+    </test>
+
+    <test name="WebKit Desktop">
+        <parameter name="browser" value="webkit"/>
+        <classes>
+            <class name="ge.tbc.testautomation.uitests.AnonymousTipTest"/>
+            <class name="ge.tbc.testautomation.uitests.ChatBotTest"/>
+        </classes>
+    </test>
+
+</suite>

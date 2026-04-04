@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Mobile Suite" parallel="tests" thread-count="2">
+
+    <test name="Chrome Mobile">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="device" value="mobile"/>
+        <classes>
+            <class name="ge.tbc.testautomation.uitests.AnonymousTipTest"/>
+            <class name="ge.tbc.testautomation.uitests.ChatBotTest"/>
+        </classes>
+    </test>
+    <test name="Webkit Mobile">
+        <parameter name="browser" value="webkit"/>
+        <parameter name="device" value="mobile"/>
+        <classes>
+            <class name="ge.tbc.testautomation.uitests.AnonymousTipTest"/>
+            <class name="ge.tbc.testautomation.uitests.ChatBotTest"/>
+        </classes>
+    </test>
+</suite>
