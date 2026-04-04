@@ -11,7 +11,6 @@ public final class BrowserFactory {
 
     public static Browser launch(Playwright playwright, String browserType, boolean isCi) {
         return switch (browserType.toLowerCase()) {
-            case "webkit" -> playwright.webkit().launch(buildLaunchOptions(isCi, null));
             case "edge", "msedge" -> playwright.chromium().launch(buildLaunchOptions(isCi, "msedge"));
             case "chromium", "chrome" -> playwright.chromium().launch(buildLaunchOptions(isCi, null));
             default -> throw new IllegalArgumentException("Unsupported browserType: " + browserType);

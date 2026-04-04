@@ -5,8 +5,21 @@
        parallel="classes"
        thread-count="3">
 
+    <test name="Chrome Desktop">
+        <parameter name="browserType" value="chromium"/>
+        <parameter name="view" value="desktop"/>
+        <classes>
+            <class name="ge.tbc.testautomation.tests.CardsApiUiTests"/>
+            <class name="ge.tbc.testautomation.tests.QNASectionTest"/>
+            <class name="ge.tbc.testautomation.tests.ContactFormEdgeCaseTest"/>
+            <class name="ge.tbc.testautomation.tests.ContactFormNegativeValuesValidationTests"/>
+            <class name="ge.tbc.testautomation.tests.ContactFormPositiveScenarioTest"/>
+            <class name="ge.tbc.testautomation.tests.QRCodeTest"/>
+        </classes>
+    </test>
+
     <test name="Chrome Mobile">
-        <parameter name="browserType" value="chrome"/>
+        <parameter name="browserType" value="chromium"/>
         <parameter name="view" value="mobile"/>
         <classes>
             <class name="ge.tbc.testautomation.tests.CardsApiUiTests"/>
@@ -26,17 +39,5 @@
         </classes>
     </test>
 
-    <test name="Chrome Desktop">
-        <parameter name="browserType" value="chrome"/>
-        <parameter name="view" value="desktop"/>
-        <classes>
-            <class name="ge.tbc.testautomation.tests.CardsApiUiTests"/>
-            <class name="ge.tbc.testautomation.tests.QNASectionTest"/>
-            <class name="ge.tbc.testautomation.tests.ContactFormEdgeCaseTest"/>
-            <class name="ge.tbc.testautomation.tests.ContactFormNegativeValuesValidationTests"/>
-            <class name="ge.tbc.testautomation.tests.ContactFormPositiveScenarioTest"/>
-            <class name="ge.tbc.testautomation.tests.QRCodeTest"/>
-        </classes>
-    </test>
 
 </suite>
