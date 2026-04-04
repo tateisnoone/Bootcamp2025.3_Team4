@@ -17,7 +17,7 @@ permissions:
 jobs:
   execute-tests:
     name: Execute Tests
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     env:
       CI: true
 
@@ -32,17 +32,21 @@ jobs:
           java-version: '21'
           cache: maven
 
-      - name: Install OS utilities
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-playwright-
+
+      - name: Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y wget unzip curl
 
-      - name: Install Playwright browsers and dependencies
-        run: |
-          rm -rf ~/.cache/ms-playwright
-          mvn -q exec:java \
-            -Dexec.mainClass=com.microsoft.playwright.CLI \
-            -Dexec.args="install --with-deps chromium webkit"
+      - name: Install Playwright browsers
+        run: mvn -q exec:java -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install --with-deps chromium"
 
       - name: Run tests
         run: mvn clean test
@@ -68,7 +72,7 @@ jobs:
 
   generate-allure-report:
     name: Generate Allure Report
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     needs: execute-tests
     if: always()
 
@@ -88,20 +92,6 @@ jobs:
         with:
           name: allure-results
           path: target/allure-results
-
-      - name: Checkout gh-pages branch
-        uses: actions/checkout@v4
-        continue-on-error: true
-        with:
-          ref: gh-pages
-          path: gh-pages
-
-      - name: Restore Allure history
-        run: |
-          if [ -d gh-pages/history ]; then
-            mkdir -p target/allure-results/history
-            cp -r gh-pages/history/* target/allure-results/history/ || true
-          fi
 
       - name: Generate Allure report
         run: mvn -B allure:report
@@ -123,7 +113,7 @@ jobs:
 
   deploy-pages:
     name: Deploy Allure Report to GitHub Pages
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     needs: generate-allure-report
     if: always() && github.ref == 'refs/heads/master'
 
