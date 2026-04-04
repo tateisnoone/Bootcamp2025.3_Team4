@@ -60,7 +60,6 @@ public class BaseTest {
 
     private Browser launchBrowser(String browserType, boolean isCi) {
         BrowserType.LaunchOptions launchOptions = new BrowserType.LaunchOptions();
-    launchOptions.setSlowMo(3000);
         if (isCi) {
             launchOptions
                     .setHeadless(true)
