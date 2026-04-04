@@ -16,42 +16,42 @@ import static ge.tbc.testautomation.Constants.VALID_PAGE_ID;
 public class CardsApiUiTests extends BaseTest {
     private PageResponse pageResponse;
 
-    @Test(priority = 1)
+    @Test(priority = 1, description = "Get cards page details from API")
     public void setUpApiResponse() {
         pageResponse = apiSteps.getPage(VALID_PAGE_ID);
     }
 
-    @Test(priority = 2)
+    @Test(priority = 2, description = "Verify CTA button text")
     @Description("Validate CTA title from API matches UI.")
     public void validateCtaTitleApiVsUi() {
         apiSteps.validateCtaTitle(pageResponse, cardsSteps.getMainTitle());
     }
 
-    @Test(priority = 3)
+    @Test(priority = 3, description = "Verify CTA Title text")
     @Description("Validate CTA button from API matches UI.")
     public void validateCtaButtonApiVsUi() {
         apiSteps.validateCtaButton(pageResponse, cardsSteps.getApplyButtonText());
     }
 
-    @Test(priority = 4)
+    @Test(priority = 4, description = "Verify CTA list text")
     @Description("Validate CTA list from API matches UI.")
     public void validateCtaListApiVsUi() {
         apiSteps.validateCtaList(pageResponse, cardsSteps.getCtaList());
     }
 
-    @Test(priority = 5)
+    @Test(priority = 5, description = "Verify carousel text" )
     @Description("Validate cards grid from API matches UI.")
     public void validateCardsApiVsUi() {
         apiSteps.validateCardsContent(pageResponse, cardsSteps.getAllCardTitles());
     }
 
-    @Test(priority = 6)
+    @Test(priority = 6, description = "Verify old cards text")
     @Description("Validate old cards from API matches UI.")
     public void validateOldCardsApiVsUi() {
         apiSteps.validateOldCardsContent(pageResponse, cardsSteps.getOldCardTitles());
     }
 
-    @Test(priority = 7)
+    @Test(priority = 7, description = "Verify icon banner section title")
     @Description("Validate banner title from API matches UI.")
     public void validateBannerTitleApiVsUi() {
         apiSteps.validateBannerTitle(pageResponse, cardsSteps.getBannerTitle());
