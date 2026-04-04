@@ -50,6 +50,7 @@ public class Constants {
     public static final String PERSONAL_NUMBER_TXT = "პირადი ნომერი";
     public static final String PHONE_NUMBER_TXT = "ტელეფონის ნომერი";
     public static final String SUBMIT_BUTTON_TXT = "მოითხოვე ზარი";
+
     // Error Messages of Ertguli Credit Card Page Form
     public static final String ERROR_NAME_AND_SURNAME_TXT = "სახელი და გვარი ფორმატი არასწორია";
     public static final String ERROR_PERSONAL_NUMBER_TXT = "პირადი ნომერი ფორმატი არასწორია";

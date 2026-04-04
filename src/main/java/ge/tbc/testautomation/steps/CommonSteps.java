@@ -16,12 +16,6 @@ public class CommonSteps {
     }
 
     @Step
-    public CommonSteps goToHome() {
-        commonPage.tbcLogo.click();
-        return this;
-    }
-
-    @Step
     public CommonSteps openForMe() {
         commonPage.forMeBtn.click();
         return this;

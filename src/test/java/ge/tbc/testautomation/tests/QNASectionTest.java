@@ -16,6 +16,5 @@ public class QNASectionTest extends BaseTest{
         tbcCardSteps
                 .expandFaqDropdowns()
                 .verifyFaqDropdownContent();
-
     }
 }

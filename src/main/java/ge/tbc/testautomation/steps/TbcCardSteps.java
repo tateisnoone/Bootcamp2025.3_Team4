@@ -1,6 +1,5 @@
 package ge.tbc.testautomation.steps;
 
-import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import ge.tbc.testautomation.pages.TbcCardPage;
 import ge.tbc.testautomation.utils.QRReader;
@@ -14,37 +13,31 @@ import static org.testng.AssertJUnit.assertEquals;
 
 public class TbcCardSteps {
     TbcCardPage tbcCardPage;
-    public TbcCardSteps(Page page){tbcCardPage = new TbcCardPage(page);}
+
+    public TbcCardSteps(Page page) {
+        tbcCardPage = new TbcCardPage(page);
+    }
 
     @Step
-    public TbcCardSteps clickOrderCardButton(){
+    public TbcCardSteps clickOrderCardButton() {
         tbcCardPage.orderCardButton.click();
-
         return this;
     }
 
     @Step
     public TbcCardSteps expandFaqDropdowns() {
-        Locator faqDropdowns = tbcCardPage.faqDropdowns;
-
-        faqDropdowns.first().waitFor();
-
-        for(int i=0;i<3;i++){
-            faqDropdowns.nth(i).click();
+        tbcCardPage.faqDropdowns.first().waitFor();
+        for (int i = 0; i < 3; i++) {
+            tbcCardPage.faqDropdowns.nth(i).click();
         }
-
         return this;
     }
 
     @Step
-    public TbcCardSteps verifyFaqDropdownContent(){
-        Locator faqContent = tbcCardPage.faqDropdownContent;
-
-        for(int i=0;i<3;i++){
-            assertThat(faqContent.nth(i)).hasText(Pattern.compile(".+"));
-
+    public TbcCardSteps verifyFaqDropdownContent() {
+        for (int i = 0; i < 3; i++) {
+            assertThat(tbcCardPage.faqDropdownContent.nth(i)).hasText(Pattern.compile(".+"));
         }
-
         return this;
     }
 

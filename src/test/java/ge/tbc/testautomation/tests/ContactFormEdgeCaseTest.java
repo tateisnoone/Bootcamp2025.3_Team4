@@ -1,21 +1,29 @@
 package ge.tbc.testautomation.tests;
 
 import ge.tbc.testautomation.data.ErtguliFormUsersDataProvider;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import static ge.tbc.testautomation.Constants.*;
 
+@Test(groups = {"Ertguli Card Contact Form - Pasted data should be filled correctly T4-T3"})
 public class ContactFormEdgeCaseTest extends BaseTest{
 
-    @Test(dataProvider = "validPastedFullFormData", dataProviderClass = ErtguliFormUsersDataProvider.class)
-    public void fillFormData(String name, String personal, String phone) {
+    @BeforeClass(alwaysRun = true)
+    public void setup() {
         cardsSteps.navigateToErtguliCreditCardPage();
+    }
 
+    @Test(description = "open order card form", priority = 1)
+    public void openOrderCardForm() {
+        ertguliCreditCardSteps.openCardOrderForm();
+    }
+
+    @Test(dataProvider = "validPastedFullFormData", dataProviderClass = ErtguliFormUsersDataProvider.class, priority = 2)
+    public void fillFormData(String name, String personal, String phone) {
         ertguliCreditCardSteps
-                .openCardOrderForm()
                 .pasteNameAndSurname(name)
                 .pastePersonalNumber(personal)
                 .pastePhoneNumber(phone)
-                .assertErrorMessageIsVisible(ERROR_PHONE_NUMBER_WHEN_FORMATTING_CHARACTERS_TXT);
+                .assertSubmitButtonIsEnabled();
     }
 }

@@ -32,7 +32,7 @@ public class ApiSteps {
 
         return response;
     }
-
+    @Step
     private SectionComponent getSection(PageResponse response, String type) {
         return response.sectionComponents()
                 .stream()
@@ -93,7 +93,7 @@ public class ApiSteps {
         return getSection(r, CARDS_GRID_CAROUSEL)
                 .inputs()
                 .slides()
-                .get(0)
+                .getFirst()
                 .cards()
                 .stream()
                 .map(Card::title)

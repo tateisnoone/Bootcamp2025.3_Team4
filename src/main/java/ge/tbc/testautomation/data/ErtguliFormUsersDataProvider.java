@@ -26,7 +26,7 @@ public class ErtguliFormUsersDataProvider {
     @DataProvider(name = "validPastedFullFormData")
     public static Object[][] validPastedFullFormData(){
         return new Object[][] {
-                {"სახელი გვარი", "01001111111", "597-00-00-00"}
+                {"სახელი გვარი", "01001111111", "597 00 00 00"}
         };
     }
 }
