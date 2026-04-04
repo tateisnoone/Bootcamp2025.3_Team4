@@ -1,5 +1,6 @@
 import http from 'k6/http';
 import { check, sleep, group } from 'k6';
+import { textSummary } from 'https://jslib.k6.io/k6-summary/0.0.1/index.js';
 
 const BASE_URL = 'https://tbcbank.ge';
 
@@ -37,3 +38,7 @@ export default function () {
 
   sleep(Math.random() * 3 + 1);
 }
+
+
+// for json structures reports using command :
+//  k6 run load.js --summary-export=report_load.json
