@@ -99,8 +99,11 @@ npx playwright install
 mvn clean test
 
 ### Run performance tests
-k6 run src/test/resources/performance/load-test.js
-k6 run src/test/resources/performance/stress-test.js
+cd .. 
+cd performance-tests
+
+k6 run load.js --summary-export=report_load.json
+k6 run stress.js --summary-export=summary.json
 
 ---
 
