@@ -54,6 +54,6 @@ public class CardsApiUiTests extends BaseTest {
     @Test(priority = 7)
     @Description("Validate banner title from API matches UI.")
     public void validateBannerTitleApiVsUi() {
-        apiSteps.validateBannerTitle(pageResponse, "test");
+        apiSteps.validateBannerTitle(pageResponse, cardsSteps.getBannerTitle());
     }
 }
