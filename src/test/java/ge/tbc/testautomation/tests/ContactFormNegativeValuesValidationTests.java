@@ -16,8 +16,11 @@ public class ContactFormNegativeValuesValidationTests extends BaseTest {
         ertguliCreditCardSteps.openCardOrderForm();
     }
 
-    @Test(dataProvider = "invalidFullFormData", dataProviderClass = ErtguliFormUsersDataProvider.class)
-    public void validateMultipleInvalidFields(String name, String personal, String phone) {
+    @Test(
+            dataProvider = "invalidFullFormData",
+            dataProviderClass = ErtguliFormUsersDataProvider.class,
+            description = "Fill out form data with invalid inputs"
+    )    public void validateMultipleInvalidFields(String name, String personal, String phone) {
         ertguliCreditCardSteps
                 .typeNameAndSurname(name)
                 .typePersonalNumber(personal)

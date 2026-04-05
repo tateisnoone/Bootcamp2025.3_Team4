@@ -16,8 +16,11 @@ public class ContactFormPositiveScenarioTest extends BaseTest {
     }
 
     @RetryCount(count = 3)
-    @Test(description = "Validate submit button enabled for DB users", dataProvider = "usersDBCases",
-            dataProviderClass = UsersDbDataProvider.class)
+    @Test(
+            description = "Validate submit button enabled for DB users",
+            dataProvider = "usersDBCases",
+            dataProviderClass = UsersDbDataProvider.class
+    )
     public void submitButtonShouldBeEnabledForValidUsers(String name, String personal, String phone) {
         ertguliCreditCardSteps
                 .pasteNameAndSurname(name)

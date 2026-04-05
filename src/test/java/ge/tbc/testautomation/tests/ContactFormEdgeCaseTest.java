@@ -18,7 +18,11 @@ public class ContactFormEdgeCaseTest extends BaseTest{
         ertguliCreditCardSteps.openCardOrderForm();
     }
 
-    @Test(dataProvider = "validPastedFullFormData", dataProviderClass = ErtguliFormUsersDataProvider.class, priority = 2)
+    @Test(
+            dataProvider = "validPastedFullFormData",
+            dataProviderClass = ErtguliFormUsersDataProvider.class, priority = 2,
+            description = "Order the Ertguli Credit Card"
+    )
     public void fillFormData(String name, String personal, String phone) {
         ertguliCreditCardSteps
                 .pasteNameAndSurname(name)
