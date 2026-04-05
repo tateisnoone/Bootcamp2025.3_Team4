@@ -20,6 +20,11 @@ public class AllureAttachments {
         return details;
     }
 
+    @Attachment(value = "Stage", type = "text/plain")
+    public static String attachStage(String stage) {
+        return stage;
+    }
+
     public static void attachPageState(Page page, Throwable throwable) {
         if (page == null) {
             attachFailureDetails("Page was null. Throwable: " +

@@ -17,6 +17,7 @@ public class CustomTestListener implements ITestListener, IConfigurationListener
         logger.error("TEST FAILED: {} at {}", result.getName(), LocalDateTime.now(), result.getThrowable());
 
         Page page = PageManager.getPage();
+        AllureAttachments.attachStage("TEST FAILURE: " + result.getMethod().getMethodName());
         AllureAttachments.attachPageState(page, result.getThrowable());
     }
 
@@ -31,6 +32,7 @@ public class CustomTestListener implements ITestListener, IConfigurationListener
         );
 
         Page page = PageManager.getPage();
+        AllureAttachments.attachStage("CONFIGURATION FAILURE: " + result.getMethod().getMethodName());
         AllureAttachments.attachPageState(page, result.getThrowable());
     }
 }

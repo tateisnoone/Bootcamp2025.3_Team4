@@ -5,6 +5,7 @@ import ge.tbc.testautomation.factory.BrowserFactory;
 import ge.tbc.testautomation.factory.ContextOptionsFactory;
 import ge.tbc.testautomation.steps.*;
 import ge.tbc.testautomation.steps.apisteps.ApiSteps;
+import ge.tbc.testautomation.utils.AllureAttachments;
 import ge.tbc.testautomation.utils.CookieUtils;
 import ge.tbc.testautomation.utils.NavigationFlows;
 import ge.tbc.testautomation.utils.PageManager;
@@ -49,6 +50,7 @@ public class BaseTest {
 
             page = context.newPage();
             PageManager.setPage(page);
+
             page.navigate(BASE_URL);
 
             initSteps();
@@ -56,7 +58,7 @@ public class BaseTest {
             CookieUtils.acceptIfVisible(page);
             new NavigationFlows(commonSteps, view).openCardsFromHome();
         } catch (Exception e) {
-            tearDown();
+            AllureAttachments.attachPageState(page, e);
             throw e;
         }
     }
