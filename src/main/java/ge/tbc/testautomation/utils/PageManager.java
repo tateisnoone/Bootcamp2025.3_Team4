@@ -2,8 +2,11 @@ package ge.tbc.testautomation.utils;
 
 import com.microsoft.playwright.Page;
 
-public class PageManager {
+public final class PageManager {
     private static final ThreadLocal<Page> PAGE = new ThreadLocal<>();
+
+    private PageManager() {
+    }
 
     public static void setPage(Page page) {
         PAGE.set(page);
