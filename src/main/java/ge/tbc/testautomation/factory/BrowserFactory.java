@@ -10,14 +10,20 @@ public final class BrowserFactory {
     }
 
     public static Browser launch(Playwright playwright, String browserType, boolean isCi) {
-        return switch (browserType.toLowerCase()) {
-            case "edge", "msedge" -> playwright.chromium().launch(buildLaunchOptions(isCi, "msedge"));
-            case "chromium", "chrome" -> playwright.chromium().launch(buildLaunchOptions(isCi, null));
+        String normalized = browserType.toLowerCase();
+
+        return switch (normalized) {
+            case "edge", "msedge" ->
+                    playwright.chromium().launch(buildChromiumOptions(isCi, "msedge"));
+            case "chromium", "chrome" ->
+                    playwright.chromium().launch(buildChromiumOptions(isCi, null));
+            case "webkit", "safari" ->
+                    playwright.webkit().launch(buildGenericOptions(isCi));
             default -> throw new IllegalArgumentException("Unsupported browserType: " + browserType);
         };
     }
 
-    private static BrowserType.LaunchOptions buildLaunchOptions(boolean isCi, String channel) {
+    private static BrowserType.LaunchOptions buildChromiumOptions(boolean isCi, String channel) {
         BrowserType.LaunchOptions options = new BrowserType.LaunchOptions();
 
         if (channel != null) {
@@ -36,5 +42,10 @@ public final class BrowserFactory {
         }
 
         return options;
+    }
+
+    private static BrowserType.LaunchOptions buildGenericOptions(boolean isCi) {
+        return new BrowserType.LaunchOptions()
+                .setHeadless(isCi);
     }
 }
