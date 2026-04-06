@@ -67,6 +67,7 @@ Performance checks include:
 
 - Chromium / Chrome
 - Edge
+- Webkit
 - Mobile view
 
 ---
